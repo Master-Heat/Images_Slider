@@ -13,7 +13,20 @@ let prevButton = document.getElementById("prev");
 // Hande click on previous and Next buttons
 nextButton.addEventListener("click", nextSlide);
 prevButton.addEventListener("click", prevSlide);
-
+// read the event when releas a key after clicking it  to the window
+addEventListener("keyup", ({ key }) => {
+  // check the key
+  switch (key) {
+    // when releas left arrrow call previous slide function
+    case "ArrowLeft":
+      prevSlide();
+      break;
+    // when releas right arrrow call nextslide slide function
+    case "ArrowRight":
+      nextSlide();
+      break;
+  }
+});
 // create main ul Element (slide numbers)
 let paginationElement = document.createElement("ul");
 // set id on created ul
